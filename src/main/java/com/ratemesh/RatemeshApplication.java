@@ -1,0 +1,13 @@
+package com.ratemesh;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class RatemeshApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(RatemeshApplication.class, args);
+	}
+
+}
