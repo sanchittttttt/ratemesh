@@ -17,4 +17,10 @@ public class ViolationLog
     private Client client;
     private String endpoint;
     private LocalDateTime timeStamp;
+
+    @PrePersist
+    public void onCreate()
+    {
+        timeStamp = LocalDateTime.now();
+    }
 }
