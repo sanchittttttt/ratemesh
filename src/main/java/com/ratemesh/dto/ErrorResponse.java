@@ -1,4 +1,4 @@
-package com.ratemesh.advice;
+package com.ratemesh.dto;
 
 import lombok.Data;
 
@@ -9,5 +9,5 @@ public class ErrorResponse
 {
     private String message;
     private Integer statusCode;
-    private LocalDateTime timestamp;
+    private LocalDateTime timestamp = LocalDateTime.now();
 }

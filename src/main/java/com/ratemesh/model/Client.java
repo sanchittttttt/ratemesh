@@ -1,6 +1,8 @@
 package com.ratemesh.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -13,7 +15,10 @@ public class Client
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotBlank(message = "Name is mandatory")
     private String name;
+    @NotBlank
+    @Size(min = 8, message = "Must be at least 8 characters long")
     private String apiKey;
     private LocalDateTime createdAt;
 

@@ -2,6 +2,7 @@ package com.ratemesh.controller;
 
 import com.ratemesh.dto.CheckRequest;
 import com.ratemesh.service.RateLimitRuleService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +21,7 @@ public class CheckController
     }
 
     @PostMapping("/api/check")
-    public ResponseEntity<String> check(@RequestBody CheckRequest checkRequest)
+    public ResponseEntity<String> check(@Valid @RequestBody CheckRequest checkRequest)
     {
         String apiKey = checkRequest.getApiKey();
         String endPoint = checkRequest.getEndPoint();
